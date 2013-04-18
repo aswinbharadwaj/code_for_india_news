@@ -1,0 +1,23 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index(news: String ?= "http://www.techmeme.com/feed.xml")
+
+# On refresh
+
+GET	/refresh		    controllers.Application.refresh()
+
+# News services
+
+GET	/techmeme		    controllers.Application.techmeme()
+
+GET	/hindu		    	    controllers.Application.hindu()
+
+GET	/toi		    	    controllers.Application.toi()
+
+GET	/bbc		    	    controllers.Application.bbc()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

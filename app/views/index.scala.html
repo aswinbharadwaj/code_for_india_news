@@ -1,0 +1,62 @@
+@(feed: Feed, source: String)
+
+@import helper._
+
+@main("News Feed") {
+    	
+	<h1>@source: @feed.getMessages().size() News Articles</h1>
+	
+	<h3> Hit refresh to randomize </h3>
+	<hr></hr>
+	<br/>	
+	@form(routes.Application.refresh()){
+		<input type="submit" value="Refresh News">
+	}
+	
+	<hr></hr>
+	<br/>	
+	<h3> Hit news buttons to change feed </h3>	
+	<hr></hr>
+	<br/>
+	@form(routes.Application.techmeme()){
+		<input type="submit" value="Tech Meme">
+	}
+	@form(routes.Application.hindu()){
+		<input type="submit" value="Hindu News Update">
+	}
+	@form(routes.Application.toi()){
+		<input type="submit" value="Times of India">
+	}
+	@form(routes.Application.bbc()){
+		<input type="submit" value="BBC Top Stories">
+	}
+	<hr></hr>
+	<br/>	
+	<h2>@source: Feed Details</h2>
+		<ul>
+		<li>Title&nbsp;&gt;&gt;&nbsp;&nbsp;@feed.getTitle()</li>
+		<li>From&nbsp;&gt;&gt;&nbsp;&nbsp;@feed.getLink()</li>
+		<li>Description&nbsp;&gt;&gt;&nbsp;&nbsp;@Html(feed.getDescription())</li>
+		<li>Language&nbsp;&gt;&gt;&nbsp;&nbsp;@feed.getLanguage()</li>
+		<li>Copyright&nbsp;&gt;&gt;&nbsp;&nbsp;@feed.getCopyright()</li>
+		</li>Date&nbsp;&gt;&gt;&nbsp;&nbsp;@feed.getPubDate()</li>
+		</ul>
+	<hr></hr>
+	<br/>	
+	<hr></hr>
+	
+	<ol>
+		@for(feedMessage <- feed.getMessages()){
+			<li>
+				<ul>
+					<li>Title&nbsp;&gt;&gt;&nbsp;&nbsp;@feedMessage.getTitle()</li>
+					<li>From&nbsp;&gt;&gt;&nbsp;&nbsp;@feedMessage.getLink()</li>
+					<li>Description&nbsp;&gt;&gt;&nbsp;&nbsp;@Html(feedMessage.getDescription())</li>
+					<li>Author&nbsp;&gt;&gt;&nbsp;&nbsp;@feedMessage.getAuthor()</li>
+					<li>Guid&nbsp;&gt;&gt;&nbsp;&nbsp;@feedMessage.getGuid()</li>
+				</ul>
+			</li>
+		}
+	</ol>
+    
+}
