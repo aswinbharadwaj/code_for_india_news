@@ -16,7 +16,7 @@ public class Application extends Controller {
 	   Replace with say 
 			
 		http://www.techmeme.com/feed.xml (default)
-		http://www.hindu.com/rss/nushdline.xml
+		http://www.thehindu.com/?service=rss
 		http://timesofindia.feedsportal.com/c/33039/f/533916/index.rss
 		http://feeds.bbci.co.uk/news/rss.xml
 
@@ -48,7 +48,7 @@ public class Application extends Controller {
     public static Result hindu() {
        
        newsGlobal = "Hindu News Update";
-       global = "http://www.hindu.com/rss/nushdline.xml";
+       global = "http://www.thehindu.com/?service=rss";
        return redirect(routes.Application.index(global, "Hindu News Update"));
     }
 
