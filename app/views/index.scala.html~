@@ -18,16 +18,16 @@
 	<h3> Hit news buttons to change feed </h3>	
 	<hr></hr>
 	<br/>
-	@form(routes.Reader.techmeme()){
+	@form(routes.Application.techmeme()){
 		<input type="submit" value="Tech Meme">
 	}
-	@form(routes.Reader.hindu()){
+	@form(routes.Application.hindu()){
 		<input type="submit" value="Hindu News Update">
 	}
-	@form(routes.Reader.toi()){
+	@form(routes.Application.toi()){
 		<input type="submit" value="Times of India">
 	}
-	@form(routes.Reader.bbc()){
+	@form(routes.Application.bbc()){
 		<input type="submit" value="BBC Top Stories">
 	}
 	<hr></hr>

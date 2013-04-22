@@ -1,23 +1,23 @@
 # Routes
-# This file defines all application routes (Higher priority routes first)
+# This file defines all Reader routes (Higher priority routes first)
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index(news: String ?= "http://www.techmeme.com/feed.xml", source: String?= "Tech Meme")
+GET     /                           controllers.Reader.index(news: String ?= "http://www.techmeme.com/feed.xml", source: String?= "Tech Meme")
 
 # On refresh
 
-GET	/refresh		    controllers.Application.refresh()
+GET	/refresh		    controllers.Reader.refresh()
 
 # News services
 
-GET	/techmeme		    controllers.Application.techmeme()
+GET	/techmeme		    controllers.Reader.techmeme()
 
-GET	/hindu		    	    controllers.Application.hindu()
+GET	/hindu		    	    controllers.Reader.hindu()
 
-GET	/toi		    	    controllers.Application.toi()
+GET	/toi		    	    controllers.Reader.toi()
 
-GET	/bbc		    	    controllers.Application.bbc()
+GET	/bbc		    	    controllers.Reader.bbc()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
